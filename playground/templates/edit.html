@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" class="post-form" action="/update/{{employee.id}}">  
+            {% csrf_token %}  
+            <div class="container">   
+                <div class="col-12">  
+                    <h3>Update Details</h3>  
+                </div> 
+                <div class="mb-3"> 
+                    <label>Employee ID:</label>  
+                    <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ employee.id }}"/>    
+                </div> 
+                <div class="mb-3"> 
+                    <label>Name:</label>  
+                    <input type="text" class="form-control" name="fullname" id="id_name" required maxlength="100" value="{{ employee.fullname }}" />  
+                </div> 
+                <div class="mb-3"> 
+                    <label>Email:</label>  
+                    <input type="email" class="form-control" name="email" id="id_email" required maxlength="254" value="{{ employee.email }}" />  
+                </div> 
+                <div class="mb-3"> 
+                    <label>Contact:</label>  
+                    <input type="text" class="form-control" name="password" id="id_contact" required maxlength="15" value="{{ employee.password }}" />  
+                </div> 
+                <div class="mb-3"> 
+                    <button type="submit" class="btn btn-success btn-lg">Update</button>  
+                </div> 
+            </div>  
+            </form>  
+</body>
+</html>
